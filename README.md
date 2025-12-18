@@ -131,4 +131,3 @@ This is final project for Advanced Programming course which is given under Adama
 
 ---
 
-Let me know if you would like this converted to another format, such as PDF, or if you want additional sections like **ER Diagram**, **Use Case Models**, or **API Documentation**.
