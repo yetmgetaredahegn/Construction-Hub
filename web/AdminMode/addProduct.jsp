@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product - Online Shopping</title>
+    <title>Add Product - Construction Hub</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
     <style>
@@ -67,11 +67,14 @@
             <label for="productCategory" class="form-label">Category</label>
             <select class="form-select" id="productCategory" name="productCategory" required>
                 <option selected disabled>Select category</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Footwear">Footwear</option>
-                <option value="Fashion">Fashion</option>
-                <option value="Gaming">Gaming</option>
-                <option value="Home Appliances">Home Appliances</option>
+                <option value="Building Materials">Building Materials</option>
+                <option value="Hardware and Fasteners">Hardware and Fasteners</option>
+                <option value="Tools and Machinery">Tools and Machinery</option>
+                <option value="Plumbing Supplies">Plumbing Supplies</option>
+                <option value="Electrical Supplies">Electrical Supplies</option>
+                <option value="Paints and Finishes">Paints and Finishes</option>
+                <option value="Safety and Security Equipment">Safety and Security Equipment</option>
+                <option value="Landscaping and Outdoor Construction">Landscaping and Outdoor Construction</option>
             </select>
         </div>
 

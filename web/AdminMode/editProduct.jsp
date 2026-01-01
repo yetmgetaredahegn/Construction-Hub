@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Edit Product</title>
+    <title>Edit Product - Construction Hub</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
     <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     <style>
@@ -60,13 +60,19 @@
         <!-- Category -->
         <div class="mb-3">
             <label for="productCategory" class="form-label">Category</label>
-            <select class="form-select" id="productCategory" name="productCategory" value="<%=rs.getString(3)%>" required>
-                <option selected disabled>Select category</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Footwear">Footwear</option>
-                <option value="Fashion">Fashion</option>
-                <option value="Gaming">Gaming</option>
-                <option value="Home Appliances">Home Appliances</option>
+            <%
+                String currentCategory = rs.getString(3);
+            %>
+            <select class="form-select" id="productCategory" name="productCategory" required>
+                <option value="">Select category</option>
+                <option value="Building Materials" <%= currentCategory != null && currentCategory.equals("Building Materials") ? "selected" : "" %>>Building Materials</option>
+                <option value="Hardware and Fasteners" <%= currentCategory != null && currentCategory.equals("Hardware and Fasteners") ? "selected" : "" %>>Hardware and Fasteners</option>
+                <option value="Tools and Machinery" <%= currentCategory != null && currentCategory.equals("Tools and Machinery") ? "selected" : "" %>>Tools and Machinery</option>
+                <option value="Plumbing Supplies" <%= currentCategory != null && currentCategory.equals("Plumbing Supplies") ? "selected" : "" %>>Plumbing Supplies</option>
+                <option value="Electrical Supplies" <%= currentCategory != null && currentCategory.equals("Electrical Supplies") ? "selected" : "" %>>Electrical Supplies</option>
+                <option value="Paints and Finishes" <%= currentCategory != null && currentCategory.equals("Paints and Finishes") ? "selected" : "" %>>Paints and Finishes</option>
+                <option value="Safety and Security Equipment" <%= currentCategory != null && currentCategory.equals("Safety and Security Equipment") ? "selected" : "" %>>Safety and Security Equipment</option>
+                <option value="Landscaping and Outdoor Construction" <%= currentCategory != null && currentCategory.equals("Landscaping and Outdoor Construction") ? "selected" : "" %>>Landscaping and Outdoor Construction</option>
             </select>
         </div>
 

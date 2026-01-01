@@ -8,6 +8,7 @@ import jakarta.servlet.http.*;
 import java.io.*;
 import java.io.IOException;
 import java.sql.*;
+import java.io.File;
 
 @WebServlet("/AddProduct")
 @MultipartConfig
@@ -26,13 +27,22 @@ public class AddProduct extends HttpServlet {
             Connection connection = DatabaseProvider.getConn();
             Statement st = connection.createStatement();
 
-            String createNotificationTable = "CREATE TABLE IF NOT EXISTS notifications (nid int auto_increment primary key, title varchar(50) not null,msg varchar(100) not null, userId int,createdAt timestamp default current_timestamp, foreign key(userId) references users(userId));";
+            // Create users table first (if it doesn't exist) to avoid foreign key issues
+            String createUserTable = "CREATE TABLE IF NOT EXISTS users(userId int auto_increment primary key,userName varchar(50) not null unique,fullName varchar(100) not null,email varchar(100) not null unique,gender varchar(10), phoneNumber varchar(10) not null unique, address varchar(50),city varchar(50),region varchar(50), securityQuestion varchar(100) not null,securityAnswer varchar(100) not null,dob varchar(50) not null,password varchar(35) not null,joinedAt timestamp default current_timestamp, profilePicture varchar(255));";
             String createProductTable = "CREATE TABLE IF NOT EXISTS products(productId int auto_increment primary key, name varchar(50) not null,category varchar(50) not null,imageUrl varchar(255) not null, description TEXT, price decimal(10,2) not null, addedAt timestamp default current_timestamp);";
+            String createNotificationTable = "CREATE TABLE IF NOT EXISTS notifications (nid int auto_increment primary key, title varchar(50) not null,msg varchar(100) not null, userId int,createdAt timestamp default current_timestamp, foreign key(userId) references users(userId));";
             String insertProduct = "INSERT INTO products(name,category,imageUrl,description,price) VALUES(?,?,?,?,?);";
             String insertNotification = "INSERT INTO notifications(title,msg) values(?,?);";
 
+            st.executeUpdate(createUserTable);
             st.executeUpdate(createProductTable);
             st.executeUpdate(createNotificationTable);
+
+            // Ensure productImages directory exists
+            File uploadDir = new File(request.getServletContext().getRealPath("/") + "productImages");
+            if (!uploadDir.exists()) {
+                uploadDir.mkdirs();
+            }
 
             try (FileOutputStream fos = new FileOutputStream(uploadPath)) {
                 InputStream fis = file.getInputStream();
@@ -51,14 +61,17 @@ public class AddProduct extends HttpServlet {
 
             int row = ps.executeUpdate();
             if (row > 0) {
-                PreparedStatement ps2 = connection.prepareStatement(insertNotification);
-                ps2.setString(1, "New Product Added");
-                ps2.setString(2, "A new Product <html><strong>" + name + "</strong></html> has been added to the store");
-
-                int row2 = ps2.executeUpdate();
-                if (row2 > 0) {
-                    response.sendRedirect("AdminMode/adminHomePage.jsp");
+                // Create notification (optional, don't fail product addition if notification fails)
+                try {
+                    PreparedStatement ps2 = connection.prepareStatement(insertNotification);
+                    ps2.setString(1, "New Product Added");
+                    ps2.setString(2, "A new Product <html><strong>" + name + "</strong></html> has been added to the store");
+                    ps2.executeUpdate();
+                } catch (SQLException e) {
+                    // Log but don't fail the product addition if notification fails
+                    System.err.println("Notification creation failed: " + e.getMessage());
                 }
+                response.sendRedirect("AdminMode/adminHomePage.jsp");
             } else {
                 request.setAttribute("errorMessage", "Something went wrong!. Please try again.");
                 request.getRequestDispatcher("AdminMode/addProduct.jsp").forward(request, response);
