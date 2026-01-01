@@ -8,7 +8,7 @@ SRC_DIR="$PROJECT_DIR/src/java"
 WEB_DIR="$PROJECT_DIR/web"
 BUILD_DIR="$PROJECT_DIR/build/web"
 LIB_DIR="$PROJECT_DIR/lib"
-WAR_NAME="SUQ"
+WAR_NAME="Construction-Hub"
 
 echo "Building Construction Hub..."
 

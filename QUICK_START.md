@@ -62,7 +62,7 @@ ant clean dist
 # bash build.sh
 
 # Deploy
-cp dist/SUQ.war ~/tomcat/webapps/
+cp dist/Construction-Hub.war ~/tomcat/webapps/
 
 # Start Tomcat
 ~/tomcat/bin/startup.sh
@@ -72,7 +72,7 @@ cp dist/SUQ.war ~/tomcat/webapps/
 
 Open your browser and go to:
 ```
-http://localhost:8080/SUQ/
+http://localhost:8080/Construction-Hub/
 ```
 
 **Default Admin Login:**
@@ -98,7 +98,7 @@ Change Tomcat port in `~/tomcat/conf/server.xml` (find `<Connector port="8080"`)
 
 ### 404 Error
 - Check Tomcat logs: `tail -f ~/tomcat/logs/catalina.out`
-- Verify WAR file exists: `ls -lh ~/tomcat/webapps/SUQ.war`
+- Verify WAR file exists: `ls -lh ~/tomcat/webapps/Construction-Hub.war`
 
 ### Build Errors
 - Ensure all JAR files are in `web/WEB-INF/lib/`

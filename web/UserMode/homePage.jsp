@@ -163,7 +163,7 @@
     %>
 </div>
 
-<footer>&COPY; 2025 SuQ Online Shopping</footer>
+<footer>&COPY; 2025 Construction Hub - Contractors, Equipment and Clients In One Place</footer>
 <script src="../bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>

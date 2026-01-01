@@ -17,7 +17,7 @@ public class AddProduct extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Part file = request.getPart("fileUrl");
         String imageFileName = file.getSubmittedFileName();
-        String uploadPath = "C:/Users/DELL/Desktop/clone/construction-hub/web/productImages/" + imageFileName;
+        String uploadPath = request.getServletContext().getRealPath("/") + "productImages/" + imageFileName;
         String name = request.getParameter("name");
         String category = request.getParameter("productCategory");
         String description = request.getParameter("description");

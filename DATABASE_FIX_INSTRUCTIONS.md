@@ -58,7 +58,7 @@ static String password = "";
 bash build.sh
 
 # Redeploy to system Tomcat
-sudo cp dist/SUQ.war /var/lib/tomcat10/webapps/
+sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/
 
 # Restart Tomcat
 sudo systemctl restart tomcat10
@@ -99,7 +99,7 @@ Then update `DatabaseProvider.java` with the new password and rebuild.
 
 ## After Fixing
 
-1. The application will automatically create the `suq` database on first use
+1. The application will automatically create the `construction_hub` database on first use
 2. All tables (users, products, orders, etc.) will be created automatically
 3. You can then sign up and use the application
 

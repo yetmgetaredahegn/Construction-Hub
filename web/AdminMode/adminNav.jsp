@@ -23,7 +23,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img class="mx-1 mb-1"src="${pageContext.request.contextPath}/assets/house.svg" alt="home logo">SuQ (Admin)</a>
+        <a class="navbar-brand" href="#"><img class="mx-1 mb-1"src="${pageContext.request.contextPath}/assets/house.svg" alt="home logo">Construction Hub (Admin)</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

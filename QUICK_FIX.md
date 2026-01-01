@@ -9,7 +9,7 @@ I've changed our Tomcat to use port 8081 instead.
 ## Access Your Application
 
 Your application is now available at:
-**http://localhost:8081/SUQ/**
+**http://localhost:8081/Construction-Hub/**
 
 ## Alternative: Use System Tomcat
 
@@ -17,10 +17,10 @@ If you prefer to use the system Tomcat on port 8080:
 
 1. Deploy to system Tomcat:
    ```bash
-   sudo cp dist/SUQ.war /var/lib/tomcat10/webapps/
+   sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/
    ```
 
-2. Access at: http://localhost:8080/SUQ/
+2. Access at: http://localhost:8080/Construction-Hub/
 
 ## Restore Port 8080 (if system Tomcat is stopped)
 

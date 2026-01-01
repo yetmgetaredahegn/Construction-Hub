@@ -59,7 +59,7 @@ if mysql -u root -p"$NEW_PASSWORD" -e "SELECT 1;" 2>/dev/null; then
     echo ""
     echo "Next steps:"
     echo "  1. bash build.sh"
-    echo "  2. sudo cp dist/SUQ.war /var/lib/tomcat10/webapps/"
+    echo "  2. sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/"
     echo "  3. sudo systemctl restart tomcat10"
     echo ""
     echo "OR if using custom Tomcat:"

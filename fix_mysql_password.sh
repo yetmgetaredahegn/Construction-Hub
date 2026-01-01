@@ -47,7 +47,7 @@ case $choice in
             echo ""
             echo "Now you need to rebuild and redeploy:"
             echo "  1. bash build.sh"
-            echo "  2. sudo cp dist/SUQ.war /var/lib/tomcat10/webapps/"
+            echo "  2. sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/"
             echo "  3. sudo systemctl restart tomcat10"
             echo ""
         else

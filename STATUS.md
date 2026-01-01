@@ -65,14 +65,14 @@ cd /home/yetmgeta/projects/Construction-Hub
 4. **Deploy and run**:
    ```bash
    # Copy WAR file to Tomcat
-   cp dist/SUQ.war ~/tomcat/webapps/
+   cp dist/Construction-Hub.war ~/tomcat/webapps/
    
    # Start Tomcat
    ~/tomcat/bin/startup.sh
    ```
 
 5. **Access the application**:
-   - Open browser: http://localhost:8080/SUQ/
+   - Open browser: http://localhost:8080/Construction-Hub/
    - Admin login: admin@gmail.com / admin
 
 ## 📚 Documentation
@@ -83,7 +83,7 @@ cd /home/yetmgeta/projects/Construction-Hub
 
 ## 🗄️ Database
 
-The application automatically creates the database (`suq`) and tables on first run:
+The application automatically creates the database construction_hub`) and tables on first run:
 - `users` - User accounts
 - `products` - Product catalog  
 - `orders` - Order records
@@ -116,6 +116,6 @@ Edit `~/tomcat/conf/server.xml` and change the port number.
 
 ### Application Not Loading
 - Check Tomcat logs: `tail -f ~/tomcat/logs/catalina.out`
-- Verify WAR file: `ls -lh ~/tomcat/webapps/SUQ.war`
+- Verify WAR file: `ls -lh ~/tomcat/webapps/Construction-Hub.war`
 - Check Tomcat is running: `ps aux | grep tomcat`
 

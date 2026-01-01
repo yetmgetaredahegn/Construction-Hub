@@ -17,7 +17,7 @@ if mysql -u root -e "SELECT 1;" 2>/dev/null; then
     echo ""
     echo "Now rebuild and redeploy:"
     echo "  bash build.sh"
-    echo "  sudo cp dist/SUQ.war /var/lib/tomcat10/webapps/  (or use ./run.sh for custom Tomcat)"
+    echo "  sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/  (or use ./run.sh for custom Tomcat)"
     echo "  sudo systemctl restart tomcat10"
     exit 0
 fi
@@ -45,7 +45,7 @@ for pwd in "${COMMON_PASSWORDS[@]}"; do
         echo ""
         echo "Now rebuild and redeploy:"
         echo "  bash build.sh"
-        echo "  sudo cp dist/SUQ.war /var/lib/tomcat10/webapps/  (or use ./run.sh for custom Tomcat)"
+        echo "  sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/  (or use ./run.sh for custom Tomcat)"
         echo "  sudo systemctl restart tomcat10"
         exit 0
     else

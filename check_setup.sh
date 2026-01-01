@@ -112,7 +112,7 @@ if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
     echo ""
     echo "Next steps:"
     echo "  1. Run: ./run.sh"
-    echo "  2. Open: http://localhost:8080/SUQ/"
+    echo "  2. Open: http://localhost:8080/Construction-Hub/"
 elif [ $ERRORS -eq 0 ]; then
     echo "⚠ Setup complete with $WARNINGS warning(s)"
     echo "You can proceed, but review warnings above"

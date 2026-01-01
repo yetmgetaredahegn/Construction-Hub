@@ -7,7 +7,7 @@ set -e  # Exit on error
 
 PROJECT_DIR="/home/yetmgeta/projects/Construction-Hub"
 TOMCAT_HOME="$HOME/tomcat"
-WAR_NAME="SUQ"
+WAR_NAME="Construction-Hub"
 
 echo "=========================================="
 echo "Construction Hub - Run Script"

@@ -31,12 +31,12 @@ Then rebuild and redeploy.
 1. Find your MySQL password: `mysql -u root -p`
 2. Update `src/java/aos/dao/DatabaseProvider.java` line 10
 3. Rebuild: `bash build.sh`
-4. Redeploy: `sudo cp dist/SUQ.war /var/lib/tomcat10/webapps/` or `./run.sh`
+4. Redeploy: `sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/` or `./run.sh`
 
 ## 📍 Access URLs
 
-- **System Tomcat:** http://localhost:8080/SUQ/
-- **Custom Tomcat:** http://localhost:8081/SUQ/
+- **System Tomcat:** http://localhost:8080/Construction-Hub/
+- **Custom Tomcat:** http://localhost:8081/Construction-Hub/
 
 ## 📝 Files to Know
 
@@ -49,7 +49,7 @@ Then rebuild and redeploy.
 ## 🎯 After Fixing
 
 Once MySQL password is correct:
-1. Database `suq` will be created automatically
+1. database construction_hub` will be created automatically
 2. All tables will be created automatically
 3. You can sign up and use the application
 4. Admin login: admin@gmail.com / admin

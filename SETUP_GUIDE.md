@@ -30,7 +30,7 @@ sudo apt-get install tomcat10 tomcat10-admin
 
 ## Step 2: Configure MySQL Database
 
-The application will automatically create the database named `suq` when it first runs. However, you need to ensure MySQL is running and the root user credentials match.
+The application will automatically create the database `construction_hub` when it first runs. However, you need to ensure MySQL is running and the root user credentials match.
 
 **Default credentials in the code:**
 - Username: `root`
@@ -84,7 +84,7 @@ cd /home/yetmgeta/projects/Construction-Hub
 bash build.sh
 ```
 
-This will create a WAR file named `SUQ.war` in the `dist` directory.
+This will create a WAR file named `Construction-Hub.war` in the `dist` directory.
 
 ## Step 5: Deploy to Tomcat
 
@@ -92,7 +92,7 @@ This will create a WAR file named `SUQ.war` in the `dist` directory.
 
 1. Copy the WAR file to Tomcat's webapps directory:
 ```bash
-cp dist/SUQ.war ~/tomcat/webapps/
+cp dist/Construction-Hub.war ~/tomcat/webapps/
 ```
 
 2. Start Tomcat:
@@ -101,7 +101,7 @@ cp dist/SUQ.war ~/tomcat/webapps/
 ```
 
 3. The application will be available at:
-   - http://localhost:8080/SUQ/
+   - http://localhost:8080/Construction-Hub/
 
 ### Option B: Using the Run Script
 
@@ -110,7 +110,7 @@ Use the provided `run.sh` script (see below).
 ## Step 6: Access the Application
 
 1. Open your web browser
-2. Navigate to: `http://localhost:8080/SUQ/`
+2. Navigate to: `http://localhost:8080/Construction-Hub/`
 3. You should see the login page
 
 ## Default Admin Credentials

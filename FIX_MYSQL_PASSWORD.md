@@ -71,7 +71,7 @@ cd /home/yetmgeta/projects/Construction-Hub
 bash build.sh
 
 # Redeploy to system Tomcat
-sudo cp dist/SUQ.war /var/lib/tomcat10/webapps/
+sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/
 sudo systemctl restart tomcat10
 ```
 

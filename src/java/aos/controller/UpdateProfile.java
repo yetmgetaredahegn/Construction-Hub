@@ -19,7 +19,7 @@ public class UpdateProfile extends HttpServlet {
 
         Part file = request.getPart("picturePicture");
         String imageFileName = file.getSubmittedFileName();
-        String uploadPath = "C:/Users/DELL/Desktop/clone/astu-online-shopping/web/productImages/" + imageFileName;
+        String uploadPath = request.getServletContext().getRealPath("/") + "productImages/" + imageFileName;
         HttpSession session = request.getSession();
 
         int userId = (Integer) session.getAttribute("userId");

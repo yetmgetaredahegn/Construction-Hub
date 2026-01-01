@@ -1,32 +1,46 @@
+# Construction Hub – Contractors, Equipment and Clients In One Place
 
-# Construction Hub
+**Construction Hub** is a web-based platform designed to modernize how construction companies, contractors, clients, and equipment suppliers interact. It serves as an integrated marketplace where construction equipment can be bought or sold, and where clients can directly post construction projects for contractors to review. The system aims to replace the scattered, time-consuming methods of finding equipment or hiring contractors, offering a central, efficient, and digital environment.
 
-**Construction Hub** is a web-based platform designed to unify construction equipment sales and contractor-client project interactions in one central place. The system enables users to browse and order construction tools and equipment, while also allowing individuals to post construction project requests so that contractors can view and communicate offers directly.
+The platform allows users to browse construction tools, heavy machines, and building materials while also enabling individuals or organizations to request full construction services. Contractors and suppliers can list equipment, manage their inventory, respond to project postings, and communicate with potential customers. Meanwhile, clients gain access to a streamlined method of sourcing both equipment and qualified contractors.
 
-This application aims to simplify procurement and contractor engagement by providing an accessible online marketplace that brings together equipment suppliers, buyers, and construction professionals.
+This project is unique because it is a **two-way connection center**. Both suppliers and clients can put what they want. Suppliers can get buyers by posting their products. Clients can get a construction company which meets their allotted budget and working locations. Contractors registered on the platform can view these requests, contact the client, negotiate terms, and finalize a deal. This feature transforms the system into a dual marketplace — not only for equipment but also for construction contracting services.
+
+It allows clients to easily find builders without physically visiting companies, and helps contractors find new job opportunities directly from the platform.
 
 ---
 
-## Features
+## Main Features
 
-### User Features
+1. **Project Posting for Construction Services**
+   * Users can post construction projects they want completed by contractors
+   * Each project posting includes: project description (e.g., house, shop, apartment, warehouse), budget, location (optional), and contact information
+   * Contractors can view posted projects and contact clients directly
 
-* **User Registration and Login:** Users can create an account, log in securely, and manage their profile information.
-* **Browse Products:** Users can view available construction equipment and tools with details such as description, price, and quantity.
-* **Shopping Cart and Orders:** Users can add multiple items to a cart and place orders efficiently through the platform.
-* **Profile Management:** Users can update and manage their personal information.
+2. **User Account Management**
+   * Users can register, log in, update profiles, manage communication details, and track activities
+   * Each account includes profile details and history of orders or project postings
 
-### Project Posting
+3. **Equipment Browsing and Catalog Viewing**
+   * Well-organized catalog of construction equipment
+   * Categories include: heavy machinery, electrical tools, cutting equipment, safety gear, and more
+   * Each item includes detailed specifications, price, availability, and images
 
-* **Construction Project Requests:** Users can submit construction project requests. Each project includes a title, description, budget, preferred timeline, and contact details.
-* Contractors can review posted projects and choose to contact the client to negotiate and finalize a deal.
-* This feature enables clients to find suitable contractors based on their specific construction requirements.
+4. **Shopping Cart and Ordering System**
+   * Users can add multiple items to a shopping cart and place orders easily
+   * Allows contractors or construction teams to collect all required equipment in one transaction
 
-### Administrator Features
+5. **Administrative Management Interface**
+   * Administrators can add equipment listings, update product details, remove unavailable items
+   * Handle user orders and monitor user activities
 
-* **Product Management:** Administrators can add, edit, and delete products to maintain an up-to-date equipment catalog.
-* **Order Management:** Administrators can view and update order status, including approval and rejection workflows.
-* **User Oversight:** Administrators oversee user activities and manage user accounts if necessary.
+6. **Order Tracking and Status Updates**
+   * Track order status (pending, accepted, rejected, or completed)
+   * Helps contractors plan schedules, delivery, and resource usage
+
+7. **Secure Authentication and Session Management**
+   * Only authorized users can interact with sensitive features
+   * Secure login and session handling protect user data and transactions
 
 ---
 
@@ -36,8 +50,8 @@ The application is developed using:
 
 * **Java Servlets and JSP** for the backend
 * **MySQL** for database management
-* **Swing** for the front-end interface
-* **Tomcat** as the application server
+* **Bootstrap** for responsive web interface
+* **Apache Tomcat** as the application server
 
 ---
 
@@ -62,14 +76,9 @@ Before running the application, ensure you have the following installed:
 
 2. **Configure Database**
 
-   * Create a MySQL database (e.g., `construction_hub`)
-   * Import the provided SQL schema if included, or create tables for:
-
-     * Users
-     * Products
-     * Orders
-     * ProjectPosts
-   * Update database connection settings in the project configuration.
+   * The application will automatically create the `construction_hub` database on first run
+   * All required tables (users, products, orders, notifications, cart) will be created automatically
+   * Ensure MySQL is running and update database credentials in `src/java/aos/dao/DatabaseProvider.java` if needed
 
 3. **Deploy the Application**
 
@@ -130,4 +139,3 @@ Contributions are welcome. If you would like to contribute, please fork the repo
 This is final project for Advanced Programming course which is given under Adama Science and Technology University.
 
 ---
-

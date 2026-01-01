@@ -21,10 +21,10 @@ NEXT STEPS:
    OR manually:
    - Install Ant: sudo apt-get install ant
    - Build: ant clean dist  (or: bash build.sh)
-   - Deploy: cp dist/SUQ.war ~/tomcat/webapps/
+   - Deploy: cp dist/Construction-Hub.war ~/tomcat/webapps/
    - Start: ~/tomcat/bin/startup.sh
 
-3. Access at: http://localhost:8080/SUQ/
+3. Access at: http://localhost:8080/Construction-Hub/
    Admin: admin@gmail.com / admin
 
 For detailed instructions, see:

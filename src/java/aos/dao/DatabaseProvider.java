@@ -10,8 +10,8 @@ public class DatabaseProvider {
     static String password = "deAlto#Crack357";
 
     public static Connection getConn() {
-        String createDatabase = "create database if not exists suq;";
-        String useDatabase = "use suq;";
+        String createDatabase = "create database if not exists construction_hub;";
+        String useDatabase = "use construction_hub;";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
