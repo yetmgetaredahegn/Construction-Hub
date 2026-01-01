@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "src/java",
+        "lib"
+    ],
+    "java.project.referencedLibraries": [
+        "/home/yetmgeta/projects/Construction-Hub/lib/servlet-api-2.5.jar",
+        "/home/yetmgeta/projects/Construction-Hub/lib/mysql-connector-j-9.1.0.jar",
+        "/home/yetmgeta/projects/Construction-Hub/lib/jsp-api-2.2.jar",
+        "/home/yetmgeta/projects/Construction-Hub/lib/jstl-1.2.jar"
+    ]
+}
