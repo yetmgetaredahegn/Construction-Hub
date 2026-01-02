@@ -1,56 +1,106 @@
-# Construction Hub - Current Status Summary
+# Construction Hub — Current Status & Fix Guide
+# ============================================================
 
-## ✅ What's Working
+# ------------------------------------------------------------
+# ✅ SYSTEM STATUS (Working)
+# ------------------------------------------------------------
+# ✔ Project builds without errors
+# ✔ Apache Tomcat installed and running
+# ✔ Application deploys successfully
+# ✔ Login page loads in browser
 
-1. ✅ Application builds successfully
-2. ✅ Tomcat is installed and running
-3. ✅ Application deploys correctly
-4. ✅ Login page loads
+# ------------------------------------------------------------
+# ❌ CURRENT ISSUE
+# ------------------------------------------------------------
+# MySQL connection is failing due to an incorrect root password.
+#
+# Error:
+#   Access denied for user 'root'@'localhost' (using password: YES)
+#
+# Cause:
+#   Wrong MySQL password configured in:
+#   src/java/aos/dao/DatabaseProvider.java
 
-## ❌ Current Issue
+# ------------------------------------------------------------
+# 🔧 FASTEST FIX (Recommended)
+# ------------------------------------------------------------
+# Reset MySQL root password using the provided script.
 
-**MySQL Connection Failing**
-
-The password in `DatabaseProvider.java` (`deAlto#Crack#357`) is incorrect.
-
-**Error:** `Access denied for user 'root'@'localhost' (using password: YES)`
-
-## 🔧 To Fix
-
-### Quickest Solution:
-
-```bash
 cd /home/yetmgeta/projects/Construction-Hub
 ./reset_mysql_password.sh
-```
 
-Then rebuild and redeploy.
+# After reset, rebuild and redeploy the application.
 
-### Alternative:
+# ------------------------------------------------------------
+# 🔁 MANUAL FIX (Alternative)
+# ------------------------------------------------------------
+# 1️⃣ Verify MySQL password manually
+mysql -u root -p
 
-1. Find your MySQL password: `mysql -u root -p`
-2. Update `src/java/aos/dao/DatabaseProvider.java` line 10
-3. Rebuild: `bash build.sh`
-4. Redeploy: `sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/` or `./run.sh`
+# 2️⃣ Update password in:
+#    src/java/aos/dao/DatabaseProvider.java
+#    (line ~10)
 
-## 📍 Access URLs
+# 3️⃣ Rebuild the project
+bash build.sh
 
-- **System Tomcat:** http://localhost:8080/Construction-Hub/
-- **Custom Tomcat:** http://localhost:8081/Construction-Hub/
+# 4️⃣ Redeploy to Tomcat (choose one)
+sudo cp dist/Construction-Hub.war /var/lib/tomcat10/webapps/
+# OR
+./run.sh
 
-## 📝 Files to Know
+# ------------------------------------------------------------
+# 📍 ACCESS URLS
+# ------------------------------------------------------------
+# Default Tomcat:
+# http://localhost:8080/Construction-Hub/
+#
+# Custom Tomcat:
+# http://localhost:8081/Construction-Hub/
 
-- `src/java/aos/dao/DatabaseProvider.java` - Database connection (password here!)
-- `build.sh` - Build script
-- `run.sh` - Build and run script
-- `reset_mysql_password.sh` - Reset MySQL password script
-- `find_mysql_password.sh` - Try to find MySQL password
+# ------------------------------------------------------------
+# 📝 IMPORTANT FILES
+# ------------------------------------------------------------
+# Database connection:
+#   src/java/aos/dao/DatabaseProvider.java
+#
+# Build script:
+#   build.sh
+#
+# Build & run:
+#   run.sh
+#
+# Reset MySQL password:
+#   reset_mysql_password.sh
+#
+# Find MySQL password:
+#   find_mysql_password.sh
 
-## 🎯 After Fixing
+# ------------------------------------------------------------
+# 🔍 HELPFUL CHECKS (Extra Concepts)
+# ------------------------------------------------------------
+# Check MySQL service status
+sudo systemctl status mysql
 
-Once MySQL password is correct:
-1. database construction_hub` will be created automatically
-2. All tables will be created automatically
-3. You can sign up and use the application
-4. Admin login: admin@gmail.com / admin
+# Check Tomcat logs if deployment fails
+tail -f /var/lib/tomcat10/logs/catalina.out
 
+# Verify WAR file exists
+ls dist/Construction-Hub.war
+
+# ------------------------------------------------------------
+# 🎯 AFTER FIXING MYSQL
+# ------------------------------------------------------------
+# ✔ Database 'construction_hub' is created automatically
+# ✔ All required tables are auto-generated
+# ✔ User registration & login will work
+#
+# 🔐 Default Admin Account:
+#   Email:    admin@gmail.com
+#   Password: admin
+
+# ------------------------------------------------------------
+# 🚀 STATUS
+# ------------------------------------------------------------
+# Application is READY once database connection succeeds.
+# ============================================================
